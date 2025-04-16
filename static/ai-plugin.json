@@ -10,10 +10,10 @@
   },
  "api": {
     "type": "openapi",
-    "url": "https://taobao-image-plugin-1.onrender.com/openapi.json",
+    "url": "https://taobao-image-plugin.onrender.com/openapi.json",
     "is_user_authenticated": true
   },
-  "logo_url": "hhttps://taobao-image-plugin-1.onrender.com/static/logo.png",
+  "logo_url": "hhttps://taobao-image-plugin.onrender.com/static/logo.png",
   "contact_email": "1465050994@email.com",
-  "legal_info_url": "https://taobao-image-plugin-1.onrender.com/legal"
+  "legal_info_url": "https://taobao-image-plugin.onrender.com/legal"
 }
