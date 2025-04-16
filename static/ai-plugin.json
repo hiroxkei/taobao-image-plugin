@@ -2,7 +2,7 @@
   "schema_version": "v1",
   "name_for_model": "image_search_upload",
   "name_for_human": "Image Search & Upload",
-  "description_for_model": "Search for an image from Bing and upload to imgbb. Returns a markdown image URL.",
+  "description_for_model": "Search for an image from taobao and upload to imgbb. Returns a markdown image URL.",
   "description_for_human": "Find an image by keyword and upload it to imgbb.",
   "auth": {
     "type": "user_http",
@@ -10,10 +10,10 @@
   },
  "api": {
     "type": "openapi",
-    "url": "https://your-subdomain.up.railway.app/openapi.json",
+    "url": "https://taobao-image-plugin-1.onrender.com/openapi.json",
     "is_user_authenticated": true
   },
-  "logo_url": "https://your-subdomain.up.railway.app/static/logo.png",
+  "logo_url": "hhttps://taobao-image-plugin-1.onrender.com/static/logo.png",
   "contact_email": "1465050994@email.com",
-  "legal_info_url": "https://your-subdomain.up.railway.app/legal"
+  "legal_info_url": "https://taobao-image-plugin-1.onrender.com/legal"
 }
