@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>🖼️ Bing 图片搜索 + 上传测试</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    input, button {
+      padding: 8px;
+      margin: 5px 0;
+      width: 100%;
+    }
+    img {
+      margin-top: 20px;
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h2>🔍 测试 Bing 图片搜索 + 上传</h2>
+  <form id="searchForm">
+    <label for="product">关键词：</label>
+    <input type="text" id="product" name="product" placeholder="例如：猫猫" required>
+
+    <label for="imgbb_key">imgbb API Key：</label>
+    <input type="text" id="imgbb_key" name="imgbb_key" placeholder="请输入你的 imgbb API Key" required>
+
+    <button type="submit">开始搜索并上传</button>
+  </form>
+
+  <div id="result" style="margin-top: 20px;"></div>
+
+  <script>
+    document.getElementById("searchForm").addEventListener("submit", async function(event) {
+      event.preventDefault();
+      const product = document.getElementById("product").value;
+      const imgbb_key = document.getElementById("imgbb_key").value;
+
+      const response = await fetch(`/get_image_url?product=${encodeURIComponent(product)}&imgbb_key=${imgbb_key}`);
+      const resultDiv = document.getElementById("result");
+
+      if (response.ok) {
+        const data = await response.json();
+        resultDiv.innerHTML = `
+          <p><strong>图片地址：</strong> <a href="${data.url}" target="_blank">${data.url}</a></p>
+          <p><strong>Markdown：</strong> <code>${data.markdown_embed}</code></p>
+          <img src="${data.url}" alt="搜索结果">
+        `;
+      } else {
+        const error = await response.json();
+        resultDiv.innerHTML = `<p style="color:red;"><strong>错误：</strong> ${error.message}</p>`;
+      }
+    });
+  </script>
+</body>
+</html>
