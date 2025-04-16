@@ -43,9 +43,10 @@ def search_image_url(query):
     """从淘宝搜索结果中提取第一个商品图片 URL（仅限 jpg/jpeg/png）"""
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0",
-        "Referer": "https://s.taobao.com/"
+        "Referer": "https://s.taobao.com/",
         "Cookie": cookie or os.getenv("TAOBAO_COOKIE")
     }
+
     # 淘宝搜索 URL（搜索结果页）
     search_url = f"https://s.taobao.com/search?q={query}"
 
